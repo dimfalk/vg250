@@ -1,7 +1,7 @@
 Package: vg250
 Title: What the Package Does (One Line, Title Case)
-Version: 0.1.0
-Date: 2023-02-24
+Version: 0.2.0
+Date: 2023-04-08
 Authors@R: 
     person("Dimitri", "Falk", , "falk.dimitri@eglv.de", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
@@ -11,10 +11,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Depends: R (>= 4.2.0)
 Imports: 
-    checkmate,
     dplyr,
-    sf,
-    stringr
+    sf
 Suggests: 
     covr,
     testthat (>= 3.0.0)
