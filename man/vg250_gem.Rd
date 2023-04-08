@@ -5,10 +5,10 @@
 \alias{vg250_gem}
 \title{Data: Polygon representation of municipalities in Germany (VG250 31.12.2021)}
 \format{
-Simple feature collection of type MULTIPOLYGON with 11,123 features and 26 fields:
+Simple feature collection of type MULTIPOLYGON with 11,123 features and 1 field:
 \describe{
-\item{GEN}{municipality name}
-\item{geometry}{centroid coordinates}
+\item{GEM}{municipality name, "GEM" level}
+\item{geometry}{coordinates}
 }
 }
 \source{

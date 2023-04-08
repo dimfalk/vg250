@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' get_extent("Aachen")
-#' get_extent("Monschau", as_bbox = TRUE)
+#' get_extent("Aachen", as_bbox = TRUE)
 get_extent <- function(x = NULL,
                        as_bbox = FALSE) {
 
@@ -20,7 +20,7 @@ get_extent <- function(x = NULL,
 
   # ----------------------------------------------------------------------------
 
-  bbox <- dplyr::filter(vg250_gem, GEN == x) |>
+  bbox <- dplyr::filter(vg250_gem, GEM == x) |>
     sf::st_bbox() |>
     sf::st_as_sfc()
 

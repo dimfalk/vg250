@@ -19,5 +19,5 @@ Retrieve the bounding box information of the object queried from the dataset
 }
 \examples{
 get_extent("Aachen")
-get_extent("Monschau", as_bbox = TRUE)
+get_extent("Aachen", as_bbox = TRUE)
 }

@@ -15,7 +15,7 @@ get_geometry <- function(x = NULL) {
 
   # ----------------------------------------------------------------------------
 
-  geom <- dplyr::filter(vg250_gem, GEN == x) |>
+  geom <- dplyr::filter(vg250_gem, GEM == x) |>
     sf::st_geometry()
 
   geom

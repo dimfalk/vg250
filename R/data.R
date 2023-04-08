@@ -2,10 +2,10 @@
 #'
 #' VG250_GEM product provided by the Federal Agency for Cartography and Geodesy, Germany
 #'
-#' @format Simple feature collection of type MULTIPOLYGON with 11,123 features and 26 fields:
+#' @format Simple feature collection of type MULTIPOLYGON with 11,123 features and 1 field:
 #' \describe{
-#'   \item{GEN}{municipality name}
-#'   \item{geometry}{centroid coordinates}
+#'   \item{GEM}{municipality name, "GEM" level}
+#'   \item{geometry}{coordinates}
 #' }
 #' @source <https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_1231/aktuell/vg250_12-31.utm32s.shape.ebenen.zip>
 #' @note Last access: 2023-02-24

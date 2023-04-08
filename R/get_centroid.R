@@ -15,7 +15,7 @@ get_centroid <- function(x = NULL) {
 
   # ----------------------------------------------------------------------------
 
-  dplyr::filter(vg250_gem, GEN == x) |>
+  dplyr::filter(vg250_gem, GEM == x) |>
     sf::st_centroid() |>
     sf::st_geometry()
 }

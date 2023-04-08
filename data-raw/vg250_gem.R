@@ -13,7 +13,9 @@ unlink(file)
 shp <- list.files(pattern = "VG250_GEM.shp", full.names = TRUE, recursive = TRUE)
 
 vg250_gem <- sf::read_sf(shp) |>
-  sf::st_transform("epsg:4326")
+  sf::st_transform("epsg:4326") |>
+  dplyr::select("GEN") |>
+  dplyr::rename("GEM" = "GEN")
 
 usethis::use_data(vg250_gem, overwrite = TRUE)
 
