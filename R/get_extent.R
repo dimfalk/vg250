@@ -12,6 +12,14 @@
 get_extent <- function(x = NULL,
                        as_bbox = FALSE) {
 
+  # check arguments ------------------------------------------------------------
+
+  checkmate::assert_character(x)
+
+  checkmate::assert_logical(as_bbox)
+
+  # ----------------------------------------------------------------------------
+
   bbox <- dplyr::filter(vg250_gem, GEN == x) |>
     sf::st_bbox() |>
     sf::st_as_sfc()

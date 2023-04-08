@@ -9,6 +9,12 @@
 #' get_geometry("Aachen")
 get_geometry <- function(x = NULL) {
 
+  # check arguments ------------------------------------------------------------
+
+  checkmate::assert_character(x)
+
+  # ----------------------------------------------------------------------------
+
   geom <- dplyr::filter(vg250_gem, GEN == x) |>
     sf::st_geometry()
 

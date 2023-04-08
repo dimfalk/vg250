@@ -9,6 +9,12 @@
 #' get_centroid("Aachen")
 get_centroid <- function(x = NULL) {
 
+  # check arguments ------------------------------------------------------------
+
+  checkmate::assert_character(x)
+
+  # ----------------------------------------------------------------------------
+
   dplyr::filter(vg250_gem, GEN == x) |>
     sf::st_centroid() |>
     sf::st_geometry()
