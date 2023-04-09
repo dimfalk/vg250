@@ -2,15 +2,19 @@
 #'
 #' @param x character. Municipality name.
 #' @param level character. Relevant administrative level.
+#' @param crs character. Coordinate reference system definition.
 #'
 #' @return Geometry set of class `sfc_MULTIPOLYGON`.
 #' @export
 #'
 #' @examples
 #' get_geometry(x = "Aachen")
+#' get_geometry(x = "Aachen", crs = "epsg:25832")
+#'
 #' get_geometry(x = "Städteregion Aachen", level = "KRS")
 get_geometry <- function(x = NULL,
-                         level = "GEM") {
+                         level = "GEM",
+                         crs = "epsg:4326") {
 
   # check arguments ------------------------------------------------------------
 
@@ -23,7 +27,8 @@ get_geometry <- function(x = NULL,
   # ----------------------------------------------------------------------------
 
   geom <- dplyr::filter(vg250, get(level) == x) |>
-    sf::st_union()
+    sf::st_union() |>
+    sf::st_transform(crs)
 
   geom
 }

@@ -4,12 +4,14 @@
 \alias{get_geometry}
 \title{Get original geometry information of the object queried from the dataset}
 \usage{
-get_geometry(x = NULL, level = "GEM")
+get_geometry(x = NULL, level = "GEM", crs = "epsg:4326")
 }
 \arguments{
 \item{x}{character. Municipality name.}
 
 \item{level}{character. Relevant administrative level.}
+
+\item{crs}{character. Coordinate reference system definition.}
 }
 \value{
 Geometry set of class \code{sfc_MULTIPOLYGON}.
@@ -19,5 +21,7 @@ Get original geometry information of the object queried from the dataset
 }
 \examples{
 get_geometry(x = "Aachen")
+get_geometry(x = "Aachen", crs = "epsg:25832")
+
 get_geometry(x = "Städteregion Aachen", level = "KRS")
 }

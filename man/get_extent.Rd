@@ -4,12 +4,14 @@
 \alias{get_extent}
 \title{Get bounding box information of the object queried from the dataset}
 \usage{
-get_extent(x = NULL, level = "GEM")
+get_extent(x = NULL, level = "GEM", crs = "epsg:4326")
 }
 \arguments{
 \item{x}{character. Municipality name.}
 
 \item{level}{character. Relevant administrative level.}
+
+\item{crs}{character. Coordinate reference system definition.}
 }
 \value{
 Geometry set of class \code{sfc_POLYGON}.
@@ -19,5 +21,7 @@ Get bounding box information of the object queried from the dataset
 }
 \examples{
 get_extent(x = "Aachen")
+get_extent(x = "Aachen", crs = "epsg:25832")
+
 get_extent(x = "Städteregion Aachen", level = "KRS")
 }
