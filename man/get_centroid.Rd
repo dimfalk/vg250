@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_centroid.R
 \name{get_centroid}
 \alias{get_centroid}
-\title{Retrieve centroid of the object queried from the dataset}
+\title{Get centroid of the object queried from the dataset}
 \usage{
 get_centroid(x = NULL, level = "GEM")
 }
@@ -15,7 +15,7 @@ get_centroid(x = NULL, level = "GEM")
 Geometry set of class \code{sfc_POINT}.
 }
 \description{
-Retrieve centroid of the object queried from the dataset
+Get centroid of the object queried from the dataset
 }
 \examples{
 get_centroid(x = "Aachen")

@@ -1,6 +1,6 @@
 Package: vg250
 Title: What the Package Does (One Line, Title Case)
-Version: 0.2.4
+Version: 0.2.5
 Date: 2023-04-09
 Authors@R: 
     person("Dimitri", "Falk", , "falk.dimitri@eglv.de", role = c("aut", "cre"))
