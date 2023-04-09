@@ -2,19 +2,22 @@
 % Please edit documentation in R/get_geometry.R
 \name{get_geometry}
 \alias{get_geometry}
-\title{Retrieve the original geometry information of the object queried from the dataset}
+\title{Retrieve original geometry information of the object queried from the dataset}
 \usage{
-get_geometry(x = NULL)
+get_geometry(x = NULL, level = "GEM")
 }
 \arguments{
 \item{x}{character. Municipality name.}
+
+\item{level}{character. Relevant administrative level.}
 }
 \value{
 Geometry set of class \code{sfc_MULTIPOLYGON}.
 }
 \description{
-Retrieve the original geometry information of the object queried from the dataset
+Retrieve original geometry information of the object queried from the dataset
 }
 \examples{
-get_geometry("Aachen")
+get_geometry(x = "Aachen")
+get_geometry(x = "Städteregion Aachen", level = "KRS")
 }

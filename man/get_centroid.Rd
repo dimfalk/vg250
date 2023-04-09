@@ -4,10 +4,12 @@
 \alias{get_centroid}
 \title{Retrieve centroid of the object queried from the dataset}
 \usage{
-get_centroid(x = NULL)
+get_centroid(x = NULL, level = "GEM")
 }
 \arguments{
 \item{x}{character. Municipality name.}
+
+\item{level}{character. Relevant administrative level.}
 }
 \value{
 Geometry set of class \code{sfc_POINT}.
@@ -16,5 +18,6 @@ Geometry set of class \code{sfc_POINT}.
 Retrieve centroid of the object queried from the dataset
 }
 \examples{
-get_centroid("Aachen")
+get_centroid(x = "Aachen")
+get_centroid(x = "Städteregion Aachen", level = "KRS")
 }

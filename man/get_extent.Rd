@@ -2,12 +2,14 @@
 % Please edit documentation in R/get_extent.R
 \name{get_extent}
 \alias{get_extent}
-\title{Retrieve the bounding box information of the object queried from the dataset}
+\title{Retrieve bounding box information of the object queried from the dataset}
 \usage{
-get_extent(x = NULL, as_bbox = FALSE)
+get_extent(x = NULL, level = "GEM", as_bbox = FALSE)
 }
 \arguments{
 \item{x}{character. Municipality name.}
+
+\item{level}{character. Relevant administrative level.}
 
 \item{as_bbox}{logical. Return bounding box as polygon or xmin/ymin/xmax/ymax?}
 }
@@ -15,9 +17,11 @@ get_extent(x = NULL, as_bbox = FALSE)
 Geometry set of class \code{sfc_POLYGON} or extent of class \code{bbox}.
 }
 \description{
-Retrieve the bounding box information of the object queried from the dataset
+Retrieve bounding box information of the object queried from the dataset
 }
 \examples{
-get_extent("Aachen")
-get_extent("Aachen", as_bbox = TRUE)
+get_extent(x = "Aachen")
+get_extent(x = "Städteregion Aachen", level = "KRS")
+
+get_extent(x = "Aachen", as_bbox = TRUE)
 }
