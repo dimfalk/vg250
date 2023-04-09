@@ -20,7 +20,7 @@ get_extent <- function(x = NULL,
 
   # ----------------------------------------------------------------------------
 
-  bbox <- dplyr::filter(vg250_gem, GEM == x) |>
+  bbox <- dplyr::filter(vg250, GEM == x) |>
     sf::st_bbox() |>
     sf::st_as_sfc()
 
