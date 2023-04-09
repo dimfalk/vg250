@@ -1,6 +1,6 @@
 #' Get bounding box information of the object queried from the dataset
 #'
-#' @param x character. Municipality name.
+#' @param x character. Name of administrative area.
 #' @param level character. Relevant administrative level.
 #' @param crs character. Coordinate reference system definition.
 #'
@@ -18,11 +18,15 @@ get_extent <- function(x = NULL,
 
   # check arguments ------------------------------------------------------------
 
-  checkmate::assert_character(x)
+  checkmate::assert_character(x, len = 1)
 
   allowed_level <- c("GEM", "KRS", "LAN")
 
   checkmate::assert_choice(level, allowed_level)
+
+  if (level == "GEM") stopifnot("Name specified does not exist." = check_municipality(x))
+
+  checkmate::assert_character(crs, len = 1, pattern = "epsg:[0-9]{4,6}")
 
   # ----------------------------------------------------------------------------
 

@@ -7,7 +7,7 @@
 get_extent(x = NULL, level = "GEM", crs = "epsg:4326")
 }
 \arguments{
-\item{x}{character. Municipality name.}
+\item{x}{character. Name of administrative area.}
 
 \item{level}{character. Relevant administrative level.}
 
