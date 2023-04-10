@@ -3,16 +3,18 @@
 #' @param x character. Municipality name.
 #'
 #' @return logical.
-#' @export
+#' @noRd
 #'
 #' @import sf
 #'
 #' @examples
+#' \dontrun{
 #' check_municipality(x = "Aachen")
 #' check_municipality(x = "Roth")
 #'
 #' check_municipality(x = "Aix la Chapelle")
 #' check_municipality(x = "Freiburg")
+#' }
 check_municipality <- function(x = NULL) {
 
   # check arguments ------------------------------------------------------------
