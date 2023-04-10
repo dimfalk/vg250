@@ -39,7 +39,8 @@ atab <- sf::st_drop_geometry(vg250_gemkrslan) |>
                 "LAN" = "GEN")
 
 vg250 <- sf::st_as_sf(atab, geom) |>
-  sf::st_transform("epsg:4326")
+  sf::st_transform("epsg:4326") |>
+  sf::st_make_valid()
 
 usethis::use_data(vg250, overwrite = TRUE)
 
