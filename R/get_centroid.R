@@ -8,10 +8,10 @@
 #' @export
 #'
 #' @examples
-#' get_centroid(x = "Aachen")
-#' get_centroid(x = "Aachen", crs = "epsg:25832")
+#' get_centroid("Aachen")
+#' get_centroid("Aachen", crs = "epsg:25832")
 #'
-#' get_centroid(x = "Städteregion Aachen", level = "KRS")
+#' get_centroid("Städteregion Aachen", level = "KRS")
 get_centroid <- function(x = NULL,
                          level = "GEM",
                          crs = "epsg:4326") {

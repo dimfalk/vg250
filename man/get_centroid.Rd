@@ -20,8 +20,8 @@ Geometry set of class \code{sfc_POINT}.
 Get centroid of the object queried from the dataset
 }
 \examples{
-get_centroid(x = "Aachen")
-get_centroid(x = "Aachen", crs = "epsg:25832")
+get_centroid("Aachen")
+get_centroid("Aachen", crs = "epsg:25832")
 
-get_centroid(x = "Städteregion Aachen", level = "KRS")
+get_centroid("Städteregion Aachen", level = "KRS")
 }

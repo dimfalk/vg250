@@ -8,10 +8,10 @@
 #' @export
 #'
 #' @examples
-#' get_extent(x = "Aachen")
-#' get_extent(x = "Aachen", crs = "epsg:25832")
+#' get_extent("Aachen")
+#' get_extent("Aachen", crs = "epsg:25832")
 #'
-#' get_extent(x = "Städteregion Aachen", level = "KRS")
+#' get_extent("Städteregion Aachen", level = "KRS")
 get_extent <- function(x = NULL,
                        level = "GEM",
                        crs = "epsg:4326") {

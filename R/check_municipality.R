@@ -9,11 +9,11 @@
 #'
 #' @examples
 #' \dontrun{
-#' check_municipality(x = "Aachen")
-#' check_municipality(x = "Roth")
+#' check_municipality("Aachen")
+#' check_municipality("Roth")
 #'
-#' check_municipality(x = "Aix la Chapelle")
-#' check_municipality(x = "Freiburg")
+#' check_municipality("Aix la Chapelle")
+#' check_municipality("Freiburg")
 #' }
 check_municipality <- function(x = NULL) {
 

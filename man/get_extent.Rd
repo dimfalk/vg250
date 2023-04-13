@@ -20,8 +20,8 @@ Geometry set of class \code{sfc_POLYGON}.
 Get bounding box information of the object queried from the dataset
 }
 \examples{
-get_extent(x = "Aachen")
-get_extent(x = "Aachen", crs = "epsg:25832")
+get_extent("Aachen")
+get_extent("Aachen", crs = "epsg:25832")
 
-get_extent(x = "Städteregion Aachen", level = "KRS")
+get_extent("Städteregion Aachen", level = "KRS")
 }

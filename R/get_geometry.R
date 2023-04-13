@@ -8,10 +8,10 @@
 #' @export
 #'
 #' @examples
-#' get_geometry(x = "Aachen")
-#' get_geometry(x = "Aachen", crs = "epsg:25832")
+#' get_geometry("Aachen")
+#' get_geometry("Aachen", crs = "epsg:25832")
 #'
-#' get_geometry(x = "Städteregion Aachen", level = "KRS")
+#' get_geometry("Städteregion Aachen", level = "KRS")
 get_geometry <- function(x = NULL,
                          level = "GEM",
                          crs = "epsg:4326") {
