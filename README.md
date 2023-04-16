@@ -4,6 +4,8 @@
 # vg250
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/dimfalk/vg250/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dimfalk/vg250/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 vg250 is a helper package to provide access to VG250 dataset in order to
