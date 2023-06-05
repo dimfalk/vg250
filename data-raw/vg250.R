@@ -16,7 +16,7 @@ gem <- list.files(pattern = "VG250_GEM.shp", full.names = TRUE, recursive = TRUE
 krs <- list.files(pattern = "VG250_KRS.shp", full.names = TRUE, recursive = TRUE)
 lan <- list.files(pattern = "VG250_LAN.shp", full.names = TRUE, recursive = TRUE)
 
-vg250_gem <- sf::read_sf(gem) |> dplyr::select("GEN", "EWZ")
+vg250_gem <- sf::read_sf(gem) |> dplyr::select("GEN", "EWZ", "KFL")
 
 vg250_krs <- sf::read_sf(krs) |> dplyr::select("GEN")
 
@@ -34,9 +34,10 @@ atab <- sf::st_drop_geometry(vg250_gemkrslan) |>
   dplyr::rename("GEM" = "GEN.x",
                 "KRS" = "GEN.y",
                 "LAN" = "GEN") |>
-  dplyr::select("GEM", "KRS", "LAN", "EWZ")
+  dplyr::select("GEM", "KRS", "LAN", "EWZ", "KFL")
 
 vg250 <- sf::st_as_sf(atab, geom) |>
+  dplyr::filter(KFL > 0) |>
   sf::st_transform("epsg:4326") |>
   sf::st_make_valid()
 

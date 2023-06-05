@@ -5,12 +5,13 @@
 \alias{vg250}
 \title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2021)}
 \format{
-Simple feature collection of type MULTIPOLYGON with 11,123 features and 4 fields:
+Simple feature collection of type MULTIPOLYGON with 10,994 features and 5 fields:
 \describe{
 \item{GEM}{municipality name, "GEM" level}
 \item{KRS}{district name, "KRS" level}
 \item{LAN}{state name, "LAN" level}
-\item{EWZ}{number of inhabitants}
+\item{EWZ}{number of inhabitants according to census bureau}
+\item{KFL}{area according to cadastral land register}
 \item{geom}{coordinates}
 }
 }
