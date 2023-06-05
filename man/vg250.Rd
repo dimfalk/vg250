@@ -3,30 +3,31 @@
 \docType{data}
 \name{vg250}
 \alias{vg250}
-\title{Data: Polygon representation of administrative areas in Germany (VG250 31.12.2021)}
+\title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2021)}
 \format{
-Simple feature collection of type MULTIPOLYGON with 11,123 features and 3 fields:
+Simple feature collection of type MULTIPOLYGON with 11,123 features and 4 fields:
 \describe{
 \item{GEM}{municipality name, "GEM" level}
 \item{KRS}{district name, "KRS" level}
 \item{LAN}{state name, "LAN" level}
-\item{geometry}{coordinates}
+\item{EWZ}{number of inhabitants}
+\item{geom}{coordinates}
 }
 }
 \source{
-\url{https://daten.gdz.bkg.bund.de/produkte/vg/vg250_ebenen_1231/aktuell/vg250_12-31.utm32s.shape.ebenen.zip}
+\url{https://daten.gdz.bkg.bund.de/produkte/vg/vg250-ew_ebenen_1231/aktuell/vg250-ew_12-31.utm32s.shape.ebenen.zip}
 }
 \usage{
 vg250
 }
 \description{
-\url{https://gdz.bkg.bund.de/index.php/default/digitale-geodaten/verwaltungsgebiete/verwaltungsgebiete-1-250-000-stand-31-12-vg250-31-12.html}
+\url{https://gdz.bkg.bund.de/index.php/default/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html}
 }
 \details{
 VG250 product provided by the Federal Agency for Cartography and Geodesy, Germany
 }
 \note{
-Last access: 2023-04-08
+Last access: 2023-06-05
 
 License: Data licence Germany – attribution – version 2.0
 
