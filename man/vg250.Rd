@@ -10,8 +10,8 @@ Simple feature collection of type MULTIPOLYGON with 10,994 features and 5 fields
 \item{GEM}{municipality name, "GEM" level}
 \item{KRS}{district name, "KRS" level}
 \item{LAN}{state name, "LAN" level}
-\item{EWZ}{number of inhabitants according to census bureau}
-\item{KFL}{area according to cadastral land register}
+\item{EWZ}{number of inhabitants according to census bureau \code{[-]}}
+\item{KFL}{area according to cadastral land register \code{[km-2]}}
 \item{geom}{coordinates}
 }
 }

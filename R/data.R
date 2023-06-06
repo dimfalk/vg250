@@ -7,8 +7,8 @@
 #'   \item{GEM}{municipality name, "GEM" level}
 #'   \item{KRS}{district name, "KRS" level}
 #'   \item{LAN}{state name, "LAN" level}
-#'   \item{EWZ}{number of inhabitants according to census bureau}
-#'   \item{KFL}{area according to cadastral land register}
+#'   \item{EWZ}{number of inhabitants according to census bureau \code{[-]}}
+#'   \item{KFL}{area according to cadastral land register \code{[km-2]}}
 #'   \item{geom}{coordinates}
 #' }
 #' @source <https://daten.gdz.bkg.bund.de/produkte/vg/vg250-ew_ebenen_1231/aktuell/vg250-ew_12-31.utm32s.shape.ebenen.zip>

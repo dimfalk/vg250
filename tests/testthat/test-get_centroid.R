@@ -18,13 +18,13 @@ test_that("Function working as intended.", {
 test_that("LEVEL argument working as intended.", {
 
   expect_equal(get_centroid("Städteregion Aachen", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> round(4),
-               c(6.217, 50.728))
+               c(6.2170, 50.7280))
 
   expect_equal(get_centroid("Rhein-Sieg-Kreis", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> round(4),
                c(7.2342, 50.7607))
 
   expect_equal(get_centroid("Breisgau-Hochschwarzwald", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> round(4),
-               c(7.9251, 47.925))
+               c(7.9251, 47.9250))
 })
 
 test_that("CRS argument working as intended.", {
