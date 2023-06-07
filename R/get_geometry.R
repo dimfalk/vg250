@@ -30,8 +30,16 @@ get_geometry <- function(x = NULL,
 
   # ----------------------------------------------------------------------------
 
-  geom <- dplyr::filter(vg250, get(level) == x) |>
-    sf::st_union() |>
+  sf <- dplyr::filter(vg250, get(level) == x)
+
+  n <- dim(sf)[1]
+
+  if (level == "GEM" && n > 1) {
+
+    sf <- dplyr::filter(sf, EWZ == max(EWZ))
+  }
+
+  geom <- sf::st_union(sf) |>
     sf::st_transform(crs)
 
   geom

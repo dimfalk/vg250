@@ -30,8 +30,16 @@ get_extent <- function(x = NULL,
 
   # ----------------------------------------------------------------------------
 
-  bbox <- dplyr::filter(vg250, get(level) == x) |>
-    sf::st_bbox() |>
+  sf <- dplyr::filter(vg250, get(level) == x)
+
+  n <- dim(sf)[1]
+
+  if (level == "GEM" && n > 1) {
+
+    sf <- dplyr::filter(sf, EWZ == max(EWZ))
+  }
+
+  bbox <- sf::st_bbox(sf) |>
     sf::st_as_sfc() |>
     sf::st_transform(crs)
 
