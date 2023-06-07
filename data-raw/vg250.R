@@ -41,6 +41,23 @@ vg250 <- sf::st_as_sf(atab, geom) |>
   sf::st_transform("epsg:4326") |>
   sf::st_make_valid()
 
+# post-processing --------------------------------------------------------------
+
+# split enclave multipolygon geometry and replace by largest polygon object
+
+obj <- c("Bremen", "Hamburg")
+
+for (i in 1:length(obj)) {
+
+  poly <- dplyr::filter(vg250, GEM == obj[i]) |> sf::st_cast("POLYGON")
+
+  area <- sf::st_area(poly)
+
+  idx <- which(area == max(area))
+
+  sf::st_geometry(vg250[vg250[["GEM"]] == obj[i], ]) <- sf::st_geometry(poly[idx, ])
+}
+
 # write to disk ----------------------------------------------------------------
 
 usethis::use_data(vg250, overwrite = TRUE)
