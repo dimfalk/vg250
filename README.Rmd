@@ -30,7 +30,7 @@ to simplify maintenance.
 
 ## Installation
 
-You can install the development version of vg250 from [GitHub](https://github.com/) with:
+You can install the development version of vg250 with:
 
 ``` r
 # install.packages("devtools")

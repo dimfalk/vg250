@@ -20,8 +20,7 @@ a separate package to simplify maintenance.
 
 ## Installation
 
-You can install the development version of vg250 from
-[GitHub](https://github.com/) with:
+You can install the development version of vg250 with:
 
 ``` r
 # install.packages("devtools")
@@ -34,6 +33,7 @@ Just a few quick insights on the use of this package:
 
 ``` r
 library(vg250)
+#> 0.4.5
 
 # fetch data
 geom <- get_geometry("Aachen")
