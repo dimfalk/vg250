@@ -4,7 +4,7 @@
 \alias{get_extent}
 \title{Get bounding box information of the object queried from the dataset}
 \usage{
-get_extent(x = NULL, level = "GEM", crs = "epsg:4326")
+get_extent(x = NULL, level = "GEM", crs = "epsg:4326", buffer = 0)
 }
 \arguments{
 \item{x}{character. Name of administrative area.}
@@ -12,6 +12,8 @@ get_extent(x = NULL, level = "GEM", crs = "epsg:4326")
 \item{level}{character. Relevant administrative level.}
 
 \item{crs}{character. Coordinate reference system definition.}
+
+\item{buffer}{numeric. Margin extension in meters. Without buffering per default.}
 }
 \value{
 Geometry set of class \code{sfc_POLYGON}.

@@ -3,6 +3,7 @@
 #' @param x character. Name of administrative area.
 #' @param level character. Relevant administrative level.
 #' @param crs character. Coordinate reference system definition.
+#' @param buffer numeric. Margin extension in meters. Without buffering per default.
 #'
 #' @return Geometry set of class `sfc_POLYGON`.
 #' @export
@@ -14,7 +15,8 @@
 #' get_extent("Städteregion Aachen", level = "KRS")
 get_extent <- function(x = NULL,
                        level = "GEM",
-                       crs = "epsg:4326") {
+                       crs = "epsg:4326",
+                       buffer = 0) {
 
   # check arguments ------------------------------------------------------------
 
@@ -27,6 +29,8 @@ get_extent <- function(x = NULL,
   if (level == "GEM") stopifnot("Name specified does not exist." = check_municipality(x))
 
   checkmate::assert_character(crs, len = 1, pattern = "epsg:[0-9]{4,6}")
+
+  checkmate::assert_numeric(buffer, len = 1, lower = 0, upper = 50000)
 
   # ----------------------------------------------------------------------------
 
@@ -42,6 +46,12 @@ get_extent <- function(x = NULL,
   bbox <- sf::st_bbox(sf) |>
     sf::st_as_sfc() |>
     sf::st_transform(crs)
+
+  # eventually extend margins according to specification
+  if (buffer > 0) {
+
+    bbox <- sf::st_buffer(bbox, dist = buffer)
+  }
 
   bbox
 }

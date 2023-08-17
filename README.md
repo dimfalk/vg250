@@ -33,17 +33,22 @@ Just a few quick insights on the use of this package:
 
 ``` r
 library(vg250)
-#> 0.4.5
+#> 0.5.0
 
 # fetch data
-geom <- get_geometry("Aachen")
-e <- get_extent("Aachen")
-p <- get_centroid("Aachen")
+name <- "Aachen"
+
+geom <- get_geometry(name)
+e <- get_extent(name)
+b <- get_extent(name, buffer = 5000)
+p <- get_centroid(name)
 
 # check classes
 class(geom)
 #> [1] "sfc_MULTIPOLYGON" "sfc"
 class(e)
+#> [1] "sfc_POLYGON" "sfc"
+class(b)
 #> [1] "sfc_POLYGON" "sfc"
 class(p)
 #> [1] "sfc_POINT" "sfc"
@@ -52,7 +57,8 @@ class(p)
 library(ggplot2)
 
 ggplot() + 
-  geom_sf(data = e) + 
+  geom_sf(data = b) + 
+  geom_sf(data = e, col = "green") + 
   geom_sf(data = geom, col = "red") + 
   geom_sf(data = p, col = "blue")
 ```

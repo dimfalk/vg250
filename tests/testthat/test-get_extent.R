@@ -39,6 +39,29 @@ test_that("CRS argument working as intended.", {
                c(400040.1, 420058, 420316.5, 400363.3, 400040.1, 5306440.6, 5306128.5, 5324757.5, 5325069.4, 5306440.6))
 })
 
+test_that("BUFFER argument working as intended.", {
+
+  expect_equal(get_extent("Aachen", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(5.9723, 5.9708, 5.9692, 5.9676, 5.9673, 5.9625, 5.9614, 5.9598, 5.9595, 5.9593))
+
+  expect_equal(get_extent("Bonn", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(7.0369, 7.0353, 7.035, 7.0334, 7.0318, 7.0301, 7.0285, 7.0269, 7.0253, 7.0237))
+
+  expect_equal(get_extent("Freiburg im Breisgau", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(7.9092, 7.9077, 7.9062, 7.9047, 7.9032, 7.9017, 7.9002, 7.9, 7.8992, 7.8985))
+
+
+
+  expect_equal(get_extent("Aachen", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
+               c(285149.3, 286097.9, 286101.4, 286107.6, 286116.5, 286128.2, 286142.4, 286159.3, 286178.7, 286200.7))
+
+  expect_equal(get_extent("Bonn", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
+               c(359220, 359643.3, 359646.1, 359651.6, 359659.8, 359670.7, 359684.2, 359700.4, 359719.2, 359740.5))
+
+  expect_equal(get_extent("Freiburg im Breisgau", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
+               c(399040.3, 399363.5, 399365.7, 399370.7, 399378.5, 399388.9, 399401.9, 399417.6, 399435.9, 399456.8))
+})
+
 test_that("Fallbacks working as intended.", {
 
   expect_error(get_extent("Aix La Chapelle"))
