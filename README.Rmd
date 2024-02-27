@@ -47,23 +47,23 @@ library(vg250)
 # fetch data
 name <- "Aachen"
 
+buff <- get_extent(name, buffer = 5000)
+ext <- get_extent(name)
 geom <- get_geometry(name)
-e <- get_extent(name)
-b <- get_extent(name, buffer = 5000)
 p <- get_centroid(name)
 
 # check classes
+class(buff)
+class(ext)
 class(geom)
-class(e)
-class(b)
 class(p)
 
 # inspect visually
 library(ggplot2)
 
 ggplot() + 
-  geom_sf(data = b) + 
-  geom_sf(data = e, col = "green") + 
+  geom_sf(data = buff) + 
+  geom_sf(data = ext, col = "green") + 
   geom_sf(data = geom, col = "red") + 
   geom_sf(data = p, col = "blue")
 ```
@@ -73,7 +73,7 @@ select vector features, perform spatial joins, construct API calls, etc.
 
 ```{r warning = FALSE}
 # convert to SpatExtent object when working with `{terra}`
-terra::vect(e) |> terra::ext()
+terra::vect(ext) |> terra::ext()
 
 # select vector features by p
 sf::st_filter(vg250, p)
@@ -82,7 +82,7 @@ sf::st_filter(vg250, p)
 sf::st_intersection(vg250, p)
 
 # construct API queries
-sf::st_bbox(e) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)
+sf::st_bbox(ext) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)
 ```
 Note: The VG250 dataset itself can be accessed via `vg250`:
 

@@ -33,23 +33,23 @@ Just a few quick insights on the use of this package:
 
 ``` r
 library(vg250)
-#> 0.5.0
+#> 0.5.2
 
 # fetch data
 name <- "Aachen"
 
+buff <- get_extent(name, buffer = 5000)
+ext <- get_extent(name)
 geom <- get_geometry(name)
-e <- get_extent(name)
-b <- get_extent(name, buffer = 5000)
 p <- get_centroid(name)
 
 # check classes
+class(buff)
+#> [1] "sfc_POLYGON" "sfc"
+class(ext)
+#> [1] "sfc_POLYGON" "sfc"
 class(geom)
 #> [1] "sfc_MULTIPOLYGON" "sfc"
-class(e)
-#> [1] "sfc_POLYGON" "sfc"
-class(b)
-#> [1] "sfc_POLYGON" "sfc"
 class(p)
 #> [1] "sfc_POINT" "sfc"
 
@@ -57,8 +57,8 @@ class(p)
 library(ggplot2)
 
 ggplot() + 
-  geom_sf(data = b) + 
-  geom_sf(data = e, col = "green") + 
+  geom_sf(data = buff) + 
+  geom_sf(data = ext, col = "green") + 
   geom_sf(data = geom, col = "red") + 
   geom_sf(data = p, col = "blue")
 ```
@@ -71,7 +71,7 @@ calls, etc.
 
 ``` r
 # convert to SpatExtent object when working with `{terra}`
-terra::vect(e) |> terra::ext()
+terra::vect(ext) |> terra::ext()
 #> SpatExtent : 5.9748614, 6.2169125, 50.6488647, 50.8573535 (xmin, xmax, ymin, ymax)
 
 # select vector features by p
@@ -99,7 +99,7 @@ sf::st_intersection(vg250, p)
 #> 2145 POINT (6.109715 50.75954)
 
 # construct API queries
-sf::st_bbox(e) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)
+sf::st_bbox(ext) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)
 #> [1] "&bbox=5.9749,50.6489,6.2169,50.8574"
 ```
 
