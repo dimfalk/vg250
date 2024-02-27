@@ -16,6 +16,12 @@ get_geometry <- function(x = NULL,
                          level = "GEM",
                          crs = "epsg:4326") {
 
+  # debugging ------------------------------------------------------------------
+
+  # x <- "Aachen"
+  # level <- "GEM"
+  # crs <- "epsg:4326"
+
   # check arguments ------------------------------------------------------------
 
   checkmate::assert_character(x, len = 1)
