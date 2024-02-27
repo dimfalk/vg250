@@ -4,6 +4,9 @@ file <- "vg250-ew_12-31.utm32s.shape.ebenen.zip"
 
 base_url <- paste0("https://daten.gdz.bkg.bund.de/produkte/vg/vg250-ew_ebenen_1231/aktuell/", file)
 
+# download data, set timeout to 2 minutes (~65.8 MB)
+options(timeout = max(120, getOption("timeout")))
+
 utils::download.file(base_url, file)
 
 utils::unzip(file)

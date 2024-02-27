@@ -23,7 +23,7 @@ get_extent <- function(x = NULL,
   # x <- "Aachen"
   # level <- "GEM"
   # crs <- "epsg:4326"
-  # buffer <- 0
+  # buffer <- 1000
 
   # check arguments ------------------------------------------------------------
 
@@ -45,6 +45,7 @@ get_extent <- function(x = NULL,
 
   n <- dim(sf)[1]
 
+  # filter to presumably most relevant object, i.e. with the largest population
   if (level == "GEM" && n > 1) {
 
     sf <- dplyr::filter(sf, EWZ == max(EWZ))
@@ -57,7 +58,10 @@ get_extent <- function(x = NULL,
   # eventually extend margins according to specification
   if (buffer > 0) {
 
-    bbox <- sf::st_buffer(bbox, dist = buffer)
+    # NOTE: temporarily fixes an s2 related issue in dimfalk/vg250#14, see also r-spatial/sf#1692
+    bbox <- sf::st_transform(bbox, "epsg:25832") |>
+      sf::st_buffer(dist = buffer) |>
+      sf::st_transform(crs)
   }
 
   bbox

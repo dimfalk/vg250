@@ -42,13 +42,13 @@ test_that("CRS argument working as intended.", {
 test_that("BUFFER argument working as intended.", {
 
   expect_equal(get_extent("Aachen", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(5.9723, 5.9708, 5.9692, 5.9676, 5.9673, 5.9625, 5.9614, 5.9598, 5.9595, 5.9593))
+               c(5.9607, 5.9607, 5.9607, 5.9607, 5.9608, 5.961, 5.9611, 5.9614, 5.9616, 5.9619))
 
   expect_equal(get_extent("Bonn", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(7.0369, 7.0353, 7.035, 7.0334, 7.0318, 7.0301, 7.0285, 7.0269, 7.0253, 7.0237))
+               c(7.0094, 7.0093, 7.0093, 7.0094, 7.0095, 7.0096, 7.0098, 7.0100, 7.0102, 7.0105))
 
   expect_equal(get_extent("Freiburg im Breisgau", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(7.9092, 7.9077, 7.9062, 7.9047, 7.9032, 7.9017, 7.9002, 7.9, 7.8992, 7.8985))
+               c(7.6491, 7.649, 7.6491, 7.6491, 7.6492, 7.6493, 7.6495, 7.6497, 7.6499, 7.6502))
 
 
 
