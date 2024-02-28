@@ -2,7 +2,7 @@
 #'
 #' @param x character. Name of administrative area.
 #' @param level character. Relevant administrative level.
-#' @param crs character. Coordinate reference system definition.
+#' @param crs character. Spatial Reference System Identifier.
 #'
 #' @return Geometry set of class `sfc_MULTIPOLYGON`.
 #' @export

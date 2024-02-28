@@ -11,7 +11,7 @@ get_extent(x = NULL, level = "GEM", crs = "epsg:4326", buffer = 0)
 
 \item{level}{character. Relevant administrative level.}
 
-\item{crs}{character. Coordinate reference system definition.}
+\item{crs}{character. Spatial Reference System Identifier.}
 
 \item{buffer}{numeric. Margin extension in meters. Without buffering per default.}
 }

@@ -11,7 +11,7 @@ get_centroid(x = NULL, level = "GEM", crs = "epsg:4326")
 
 \item{level}{character. Relevant administrative level.}
 
-\item{crs}{character. Coordinate reference system definition.}
+\item{crs}{character. Spatial Reference System Identifier.}
 }
 \value{
 Geometry set of class \code{sfc_POINT}.

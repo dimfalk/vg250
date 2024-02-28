@@ -33,7 +33,7 @@ Just a few quick insights on the use of this package:
 
 ``` r
 library(vg250)
-#> 0.5.2
+#> 0.5.3
 
 # fetch data
 name <- "Aachen"
