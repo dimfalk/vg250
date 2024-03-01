@@ -1,7 +1,7 @@
 Package: vg250
 Title: R Interface for VG250 Dataset Subset
-Version: 0.5.3
-Date: 2024-02-28
+Version: 0.5.4
+Date: 2024-03-01
 Authors@R: 
     person("Dimitri", "Falk", , "falk.dimitri@eglv.de", role = c("aut", "cre"))
 Description: Obtain feature geometries, bounding boxes and centroids of 

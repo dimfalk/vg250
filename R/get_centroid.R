@@ -7,6 +7,8 @@
 #' @return Geometry set of class `sfc_POINT`.
 #' @export
 #'
+#' @seealso [get_geometry()], [get_extent()]
+#'
 #' @examples
 #' get_centroid("Aachen")
 #' get_centroid("Aachen", crs = "epsg:25832")

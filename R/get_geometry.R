@@ -7,6 +7,8 @@
 #' @return Geometry set of class `sfc_MULTIPOLYGON`.
 #' @export
 #'
+#' @seealso [get_centroid()], [get_extent()]
+#'
 #' @examples
 #' get_geometry("Aachen")
 #' get_geometry("Aachen", crs = "epsg:25832")

@@ -8,6 +8,8 @@
 #' @return Geometry set of class `sfc_POLYGON`.
 #' @export
 #'
+#' @seealso [get_geometry()], [get_centroid()]
+#'
 #' @examples
 #' get_extent("Aachen")
 #' get_extent("Aachen", crs = "epsg:25832")

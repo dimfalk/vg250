@@ -25,3 +25,6 @@ get_centroid("Aachen", crs = "epsg:25832")
 
 get_centroid("Städteregion Aachen", level = "KRS")
 }
+\seealso{
+\code{\link[=get_geometry]{get_geometry()}}, \code{\link[=get_extent]{get_extent()}}
+}
