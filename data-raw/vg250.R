@@ -1,17 +1,17 @@
 ## code to prepare `vg250` dataset goes here
 
-file <- "vg250-ew_12-31.utm32s.shape.ebenen.zip"
+fname <- "vg250-ew_12-31.utm32s.shape.ebenen.zip"
 
-base_url <- paste0("https://daten.gdz.bkg.bund.de/produkte/vg/vg250-ew_ebenen_1231/aktuell/", file)
+base_url <- paste0("https://daten.gdz.bkg.bund.de/produkte/vg/vg250-ew_ebenen_1231/aktuell/", fname)
 
 # download data, set timeout to 2 minutes (~65.8 MB)
 options(timeout = max(120, getOption("timeout")))
 
-utils::download.file(base_url, file)
+utils::download.file(base_url, fname)
 
-utils::unzip(file)
+utils::unzip(fname)
 
-unlink(file)
+unlink(fname)
 
 # read data --------------------------------------------------------------------
 
@@ -65,4 +65,4 @@ for (i in 1:length(obj)) {
 
 usethis::use_data(vg250, overwrite = TRUE)
 
-unlink(stringr::str_sub(file, 1, -5), recursive = TRUE)
+unlink(stringr::str_sub(fname, 1, -5), recursive = TRUE)
