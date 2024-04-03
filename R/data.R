@@ -2,13 +2,15 @@
 #'
 #' VG250 product provided by the Federal Agency for Cartography and Geodesy, Germany
 #'
-#' @format Simple feature collection of type MULTIPOLYGON with 10,994 features and 5 fields:
+#' @format Simple feature collection of type MULTIPOLYGON with 10,994 features and 6 fields:
 #' \describe{
 #'   \item{GEM}{character. Municipality name, "GEM" level.}
 #'   \item{KRS}{character. District name, "KRS" level.}
 #'   \item{LAN}{character. State name, "LAN" level.}
 #'   \item{EWZ}{integer. Number of inhabitants according to census bureau \code{[-]}.}
 #'   \item{KFL}{numeric. Area according to real estate cadastre \code{[km2]}.}
+#'
+#'   \item{geom}{sfc_GEOMETRY. Coordinates.}
 #' }
 #' @source <https://daten.gdz.bkg.bund.de/produkte/vg/vg250-ew_ebenen_1231/aktuell/vg250-ew_12-31.utm32s.shape.ebenen.zip>
 #' @note Last access: 2023-06-05
