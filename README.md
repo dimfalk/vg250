@@ -9,14 +9,13 @@
 [![codecov](https://codecov.io/gh/dimfalk/vg250/branch/main/graph/badge.svg)](https://codecov.io/gh/dimfalk/vg250)
 <!-- badges: end -->
 
-vg250 is a helper package to provide access to VG250 dataset in order to
-derive spatial information for a chosen administrative level for various
-applications.
+vg250 aims to provide access to VG250 dataset in order to derive spatial
+information for a chosen administrative level for various applications.
 
-Since I found myself in the need of some kind of spatial information on
-a municipality level for convenience reasons quite often, the decision
-was made to centralize associated data and functions based on `{sf}` in
-a separate package to simplify maintenance.
+Since I found myself in the need of spatial information on a
+municipality level (geometry, extent, centroids) for convenience reasons
+quite often, the decision was made to centralize associated data and
+functions based on `{sf}` in a separate package to simplify maintenance.
 
 ## Installation
 
@@ -33,25 +32,40 @@ Just a few quick insights on the use of this package:
 
 ``` r
 library(vg250)
-#> 0.5.3
+#> 0.5.5
+```
+
+``` r
 
 # fetch data
 name <- "Aachen"
 
-buff <- get_extent(name, buffer = 5000)
 ext <- get_extent(name)
+buff <- get_extent(name, buffer = 5000)
 geom <- get_geometry(name)
 p <- get_centroid(name)
 
 # check classes
-class(buff)
-#> [1] "sfc_POLYGON" "sfc"
 class(ext)
 #> [1] "sfc_POLYGON" "sfc"
+```
+
+``` r
+class(buff)
+#> [1] "sfc_POLYGON" "sfc"
+```
+
+``` r
 class(geom)
 #> [1] "sfc_MULTIPOLYGON" "sfc"
+```
+
+``` r
 class(p)
 #> [1] "sfc_POINT" "sfc"
+```
+
+``` r
 
 # inspect visually
 library(ggplot2)
@@ -73,6 +87,9 @@ calls, etc.
 # convert to SpatExtent object when working with `{terra}`
 terra::vect(ext) |> terra::ext()
 #> SpatExtent : 5.9748614, 6.2169125, 50.6488647, 50.8573535 (xmin, xmax, ymin, ymax)
+```
+
+``` r
 
 # select vector features by p
 sf::st_filter(vg250, p)
@@ -85,6 +102,9 @@ sf::st_filter(vg250, p)
 #> 1 Aachen Städteregion Aachen Nordrhein-Westfalen 249070 160.85
 #>                             geom
 #> 1 MULTIPOLYGON (((6.057066 50...
+```
+
+``` r
 
 # join attributes spatially to p
 sf::st_intersection(vg250, p)
@@ -97,6 +117,9 @@ sf::st_intersection(vg250, p)
 #> 2145 Aachen Städteregion Aachen Nordrhein-Westfalen 249070 160.85
 #>                           geom
 #> 2145 POINT (6.109715 50.75954)
+```
+
+``` r
 
 # construct API queries
 sf::st_bbox(ext) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)

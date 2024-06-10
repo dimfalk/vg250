@@ -20,13 +20,13 @@ knitr::opts_chunk$set(
 [![codecov](https://codecov.io/gh/dimfalk/vg250/branch/main/graph/badge.svg)](https://codecov.io/gh/dimfalk/vg250)
 <!-- badges: end -->
 
-vg250 is a helper package to provide access to VG250 dataset in order to derive 
-spatial information for a chosen administrative level for various applications.
+vg250 aims to provide access to VG250 dataset in order to derive spatial 
+information for a chosen administrative level for various applications.
 
-Since I found myself in the need of some kind of spatial information on a 
-municipality level for convenience reasons quite often, the decision was made to 
-centralize associated data and functions based on `{sf}` in a separate package 
-to simplify maintenance.
+Since I found myself in the need of spatial information on a municipality level 
+(geometry, extent, centroids) for convenience reasons quite often, the decision 
+was made to centralize associated data and functions based on `{sf}` in a 
+separate package to simplify maintenance.
 
 ## Installation
 
@@ -47,14 +47,14 @@ library(vg250)
 # fetch data
 name <- "Aachen"
 
-buff <- get_extent(name, buffer = 5000)
 ext <- get_extent(name)
+buff <- get_extent(name, buffer = 5000)
 geom <- get_geometry(name)
 p <- get_centroid(name)
 
 # check classes
-class(buff)
 class(ext)
+class(buff)
 class(geom)
 class(p)
 
