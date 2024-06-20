@@ -3,13 +3,13 @@
 \docType{data}
 \name{vg250}
 \alias{vg250}
-\title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2021)}
+\title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2022)}
 \format{
-Simple feature collection of type MULTIPOLYGON with 10,994 features and 6 fields:
+Simple feature collection of type MULTIPOLYGON with 10,990 features and 6 fields:
 \describe{
-\item{GEM}{character. Municipality name, "GEM" level.}
-\item{KRS}{character. District name, "KRS" level.}
-\item{LAN}{character. State name, "LAN" level.}
+\item{GEM}{character. Municipality name, 'GEM' level.}
+\item{KRS}{character. District name, 'KRS' level.}
+\item{LAN}{character. State name, 'LAN' level.}
 \item{EWZ}{integer. Number of inhabitants according to census bureau \code{[-]}.}
 \item{KFL}{numeric. Area according to real estate cadastre \code{[km2]}.}
 
@@ -29,10 +29,10 @@ vg250
 VG250 product provided by the Federal Agency for Cartography and Geodesy, Germany
 }
 \note{
-Last access: 2023-06-05
+Last access: 2024-06-20
 
 License: Data licence Germany – attribution – version 2.0
 
-Copyright: GeoBasis-DE / BKG 2022 (modified)
+Copyright: GeoBasis-DE / BKG 2024 (modified)
 }
 \keyword{datasets}

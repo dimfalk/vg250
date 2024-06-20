@@ -32,7 +32,7 @@ Just a few quick insights on the use of this package:
 
 ``` r
 library(vg250)
-#> 0.5.5
+#> 0.5.6
 ```
 
 ``` r
@@ -57,7 +57,7 @@ class(buff)
 
 ``` r
 class(geom)
-#> [1] "sfc_MULTIPOLYGON" "sfc"
+#> [1] "sfc_POLYGON" "sfc"
 ```
 
 ``` r
@@ -86,7 +86,7 @@ calls, etc.
 ``` r
 # convert to SpatExtent object when working with `{terra}`
 terra::vect(ext) |> terra::ext()
-#> SpatExtent : 5.9748614, 6.2169125, 50.6488647, 50.8573535 (xmin, xmax, ymin, ymax)
+#> SpatExtent : 5.9748614, 6.2169125, 50.6627898, 50.8573535 (xmin, xmax, ymin, ymax)
 ```
 
 ``` r
@@ -96,10 +96,10 @@ sf::st_filter(vg250, p)
 #> Simple feature collection with 1 feature and 5 fields
 #> Geometry type: MULTIPOLYGON
 #> Dimension:     XY
-#> Bounding box:  xmin: 5.974861 ymin: 50.64886 xmax: 6.216912 ymax: 50.85735
+#> Bounding box:  xmin: 5.974861 ymin: 50.66279 xmax: 6.216912 ymax: 50.85735
 #> Geodetic CRS:  WGS 84
 #>      GEM                 KRS                 LAN    EWZ    KFL
-#> 1 Aachen Städteregion Aachen Nordrhein-Westfalen 249070 160.85
+#> 1 Aachen Städteregion Aachen Nordrhein-Westfalen 252136 160.85
 #>                             geom
 #> 1 MULTIPOLYGON (((6.057066 50...
 ```
@@ -111,42 +111,42 @@ sf::st_intersection(vg250, p)
 #> Simple feature collection with 1 feature and 5 fields
 #> Geometry type: POINT
 #> Dimension:     XY
-#> Bounding box:  xmin: 6.109715 ymin: 50.75954 xmax: 6.109715 ymax: 50.75954
+#> Bounding box:  xmin: 6.109002 ymin: 50.76053 xmax: 6.109002 ymax: 50.76053
 #> Geodetic CRS:  WGS 84
 #>         GEM                 KRS                 LAN    EWZ    KFL
-#> 2145 Aachen Städteregion Aachen Nordrhein-Westfalen 249070 160.85
+#> 2145 Aachen Städteregion Aachen Nordrhein-Westfalen 252136 160.85
 #>                           geom
-#> 2145 POINT (6.109715 50.75954)
+#> 2145 POINT (6.109002 50.76053)
 ```
 
 ``` r
 
 # construct API queries
 sf::st_bbox(ext) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)
-#> [1] "&bbox=5.9749,50.6489,6.2169,50.8574"
+#> [1] "&bbox=5.9749,50.6628,6.2169,50.8574"
 ```
 
 Note: The VG250 dataset itself can be accessed via `vg250`:
 
 ``` r
 vg250
-#> Simple feature collection with 10994 features and 5 fields
+#> Simple feature collection with 10990 features and 5 fields
 #> Geometry type: GEOMETRY
 #> Dimension:     XY
 #> Bounding box:  xmin: 5.86625 ymin: 47.27012 xmax: 15.04182 ymax: 55.05878
 #> Geodetic CRS:  WGS 84
 #> First 10 features:
 #>                    GEM          KRS                LAN    EWZ    KFL
-#> 1            Flensburg    Flensburg Schleswig-Holstein  91113  56.73
-#> 2                 Kiel         Kiel Schleswig-Holstein 246243 118.65
-#> 3               Lübeck       Lübeck Schleswig-Holstein 216277 214.19
-#> 4           Neumünster   Neumünster Schleswig-Holstein  79496  71.66
-#> 5          Brunsbüttel Dithmarschen Schleswig-Holstein  12381  65.21
-#> 6                Heide Dithmarschen Schleswig-Holstein  21844  31.97
-#> 7              Averlak Dithmarschen Schleswig-Holstein    558   9.06
+#> 1            Flensburg    Flensburg Schleswig-Holstein  92550  56.73
+#> 2                 Kiel         Kiel Schleswig-Holstein 247717 118.65
+#> 3               Lübeck       Lübeck Schleswig-Holstein 218095 214.19
+#> 4           Neumünster   Neumünster Schleswig-Holstein  79502  71.66
+#> 5          Brunsbüttel Dithmarschen Schleswig-Holstein  12603  65.21
+#> 6                Heide Dithmarschen Schleswig-Holstein  22114  31.97
+#> 7              Averlak Dithmarschen Schleswig-Holstein    570   9.06
 #> 8             Brickeln Dithmarschen Schleswig-Holstein    198   6.07
-#> 9             Buchholz Dithmarschen Schleswig-Holstein    988  14.56
-#> 10 Burg (Dithmarschen) Dithmarschen Schleswig-Holstein   4184  11.25
+#> 9             Buchholz Dithmarschen Schleswig-Holstein   1001  14.56
+#> 10 Burg (Dithmarschen) Dithmarschen Schleswig-Holstein   4206  11.25
 #>                              geom
 #> 1  MULTIPOLYGON (((9.412137 54...
 #> 2  MULTIPOLYGON (((10.16852 54...
