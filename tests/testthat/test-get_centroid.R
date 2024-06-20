@@ -6,10 +6,10 @@ test_that("Output class is as expected.", {
 test_that("Function working as intended.", {
 
   expect_equal(get_centroid("Aachen") |> sf::st_coordinates() |> as.numeric() |> round(4),
-               c(6.1097, 50.7595))
+               c(6.1090, 50.7605))
 
   expect_equal(get_centroid("Bonn") |> sf::st_coordinates() |> as.numeric() |> round(4),
-               c(7.1099, 50.7058))
+               c(7.1098, 50.7058))
 
   expect_equal(get_centroid("Freiburg im Breisgau") |> sf::st_coordinates() |> as.numeric() |> round(4),
                c(7.8181, 47.9927))
@@ -30,13 +30,13 @@ test_that("LEVEL argument working as intended.", {
 test_that("CRS argument working as intended.", {
 
   expect_equal(get_centroid("Aachen", crs = "epsg:25832") |> sf::st_coordinates() |> as.numeric() |> round(1),
-               c(296160.6, 5627069.2))
+               c(296114.6, 5627180.8))
 
   expect_equal(get_centroid("Bonn", crs = "epsg:25832") |> sf::st_coordinates() |> as.numeric() |> round(1),
-               c(366537.5, 5618810.5))
+               c(366536.3, 5618811.7))
 
   expect_equal(get_centroid("Freiburg im Breisgau", crs = "epsg:25832") |> sf::st_coordinates() |> as.numeric() |> round(1),
-               c(411822.3, 5316159.6))
+               c(411822.3, 5316159.3))
 })
 
 test_that("Fallbacks working as intended.", {

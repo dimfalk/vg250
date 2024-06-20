@@ -1,6 +1,6 @@
 test_that("Output class is as expected.", {
 
-  expect_s3_class(get_geometry("Aachen"), c("sfc_MULTIPOLYGON", "sfc"))
+  expect_s3_class(get_geometry("Aachen"), c("sfc_POLYGON", "sfc"))
 })
 
 test_that("Function working as intended.", {
@@ -18,7 +18,7 @@ test_that("Function working as intended.", {
 test_that("LEVEL argument working as intended.", {
 
   expect_equal(get_geometry("Städteregion Aachen", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(6.2379, 6.2378, 6.2377, 6.2379, 6.2382, 6.2387, 6.2392, 6.2395, 6.2388, 6.2386))
+               c(6.2049, 6.2046, 6.2042, 6.2037, 6.2028, 6.2017, 6.2004, 6.1988, 6.198, 6.1973))
 
   expect_equal(get_geometry("Rhein-Sieg-Kreis", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
                c(7.1223, 7.124, 7.1206, 7.1092, 7.1062, 7.1053, 7.1037, 7.102, 7.0989, 7.0975))

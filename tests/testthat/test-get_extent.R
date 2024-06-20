@@ -6,10 +6,10 @@ test_that("Output class is as expected.", {
 test_that("Function working as intended.", {
 
   expect_equal(get_extent("Aachen") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(5.9749, 6.2169, 6.2169, 5.9749, 5.9749, 50.6489, 50.6489, 50.8574, 50.8574, 50.6489))
+               c(5.9749, 6.2169, 6.2169, 5.9749, 5.9749, 50.6628, 50.6628, 50.8574, 50.8574, 50.6628))
 
   expect_equal(get_extent("Bonn") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(7.0235, 7.2109, 7.2109, 7.0235, 7.0235, 50.6319, 50.6319, 50.7744, 50.7744, 50.6319))
+               c(7.0235, 7.2107, 7.2107, 7.0235, 7.0235, 50.6319, 50.6319, 50.7744, 50.7744, 50.6319))
 
   expect_equal(get_extent("Freiburg im Breisgau") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
                c(7.6625, 7.9303, 7.9303, 7.6625, 7.6625, 47.9035, 47.9035, 48.0711, 48.0711, 47.9035))
@@ -30,10 +30,10 @@ test_that("LEVEL argument working as intended.", {
 test_that("CRS argument working as intended.", {
 
   expect_equal(get_extent("Aachen", crs = "epsg:25832") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
-               c(286148.5, 303256.7, 304129.3, 287097, 286148.5, 5615145.9, 5614474.8, 5637653.1, 5638323.2, 5615145.9))
+               c(286211.7, 303314.9, 304129.3, 287097, 286211.7, 5616693.9, 5616022.8, 5637653.1, 5638323.2, 5616693.9))
 
   expect_equal(get_extent("Bonn", crs = "epsg:25832") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
-               c(360219.6, 373470.8, 373854, 360643, 360219.6, 5610752.5, 5610415.8, 5626267.7, 5626604.1, 5610752.5))
+               c(360219.6, 373460.2, 373843.4, 360643, 360219.6, 5610752.5, 5610416, 5626268, 5626604.1, 5610752.5))
 
   expect_equal(get_extent("Freiburg im Breisgau", crs = "epsg:25832") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
                c(400040.1, 420058, 420316.5, 400363.3, 400040.1, 5306440.6, 5306128.5, 5324757.5, 5325069.4, 5306440.6))
@@ -53,7 +53,7 @@ test_that("BUFFER argument working as intended.", {
 
 
   expect_equal(get_extent("Aachen", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
-               c(285149.3, 286097.9, 286101.4, 286107.6, 286116.5, 286128.2, 286142.4, 286159.3, 286178.7, 286200.7))
+               c(285212.6, 286097.9, 286101.4, 286107.6, 286116.5, 286128.2, 286142.4, 286159.3, 286178.8, 286200.7))
 
   expect_equal(get_extent("Bonn", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
                c(359220, 359643.3, 359646.1, 359651.6, 359659.8, 359670.7, 359684.2, 359700.4, 359719.2, 359740.5))
