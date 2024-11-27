@@ -33,9 +33,6 @@ Just a few quick insights on the use of this package:
 ``` r
 library(vg250)
 #> 0.5.6
-```
-
-``` r
 
 # fetch data
 name <- "Aachen"
@@ -48,24 +45,12 @@ p <- get_centroid(name)
 # check classes
 class(ext)
 #> [1] "sfc_POLYGON" "sfc"
-```
-
-``` r
 class(buff)
 #> [1] "sfc_POLYGON" "sfc"
-```
-
-``` r
 class(geom)
 #> [1] "sfc_POLYGON" "sfc"
-```
-
-``` r
 class(p)
 #> [1] "sfc_POINT" "sfc"
-```
-
-``` r
 
 # inspect visually
 library(ggplot2)
@@ -87,9 +72,6 @@ calls, etc.
 # convert to SpatExtent object when working with `{terra}`
 terra::vect(ext) |> terra::ext()
 #> SpatExtent : 5.9748614, 6.2169125, 50.6627898, 50.8573535 (xmin, xmax, ymin, ymax)
-```
-
-``` r
 
 # select vector features by p
 sf::st_filter(vg250, p)
@@ -102,9 +84,6 @@ sf::st_filter(vg250, p)
 #> 1 Aachen Städteregion Aachen Nordrhein-Westfalen 252136 160.85
 #>                             geom
 #> 1 MULTIPOLYGON (((6.057066 50...
-```
-
-``` r
 
 # join attributes spatially to p
 sf::st_intersection(vg250, p)
@@ -117,9 +96,6 @@ sf::st_intersection(vg250, p)
 #> 2145 Aachen Städteregion Aachen Nordrhein-Westfalen 252136 160.85
 #>                           geom
 #> 2145 POINT (6.109002 50.76053)
-```
-
-``` r
 
 # construct API queries
 sf::st_bbox(ext) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)
