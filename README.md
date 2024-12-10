@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/dimfalk/vg250/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dimfalk/vg250/actions/workflows/R-CMD-check.yaml)
-[![codecov](https://codecov.io/gh/dimfalk/vg250/branch/main/graph/badge.svg)](https://codecov.io/gh/dimfalk/vg250)
+[![Codecov](https://codecov.io/gh/dimfalk/vg250/graph/badge.svg)](https://app.codecov.io/gh/dimfalk/vg250)
 <!-- badges: end -->
 
 vg250 aims to provide access to VG250 dataset in order to derive spatial
