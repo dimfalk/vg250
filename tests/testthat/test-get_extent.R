@@ -62,6 +62,18 @@ test_that("BUFFER argument working as intended.", {
                c(399040.3, 399363.5, 399365.7, 399370.7, 399378.5, 399388.9, 399401.9, 399417.6, 399435.9, 399456.8))
 })
 
+test_that("In case of non-unique GEM names, geometry with largest number of inhabitants is returned.", {
+
+  expect_equal(get_extent("Neuenkirchen") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4) |> suppressWarnings(),
+               c(7.3244, 7.4451, 7.4451, 7.3244, 7.3244, 52.1802, 52.1802, 52.2935, 52.2935, 52.1802))
+
+  expect_equal(get_extent("Schönberg") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4) |> suppressWarnings(),
+               c(10.8273, 10.9994, 10.9994, 10.8273, 10.8273, 53.8141, 53.8141, 53.8936, 53.8936, 53.8141))
+
+  expect_equal(get_extent("Berg") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4) |> suppressWarnings(),
+               c(11.334, 11.4289, 11.4289, 11.334, 11.334, 47.9196, 47.9196, 48, 48, 47.9196))
+})
+
 test_that("Fallbacks working as intended.", {
 
   expect_error(get_extent("Aix La Chapelle"))

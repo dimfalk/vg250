@@ -39,6 +39,18 @@ test_that("CRS argument working as intended.", {
                c(410985.1, 411051.8, 411018.4, 410880.5, 410683.6, 410297.8, 410259.9, 410371.1, 410230.8, 410048.8))
 })
 
+test_that("In case of non-unique GEM names, geometry with largest number of inhabitants is returned.", {
+
+  expect_equal(get_geometry("Neuenkirchen") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4) |> suppressWarnings(),
+               c(7.3784, 7.3669, 7.3657, 7.3656, 7.3616, 7.351, 7.3456, 7.337, 7.3295, 7.3295))
+
+  expect_equal(get_geometry("Schönberg") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4) |> suppressWarnings(),
+               c(10.9784, 10.9766, 10.9756, 10.9747, 10.9733, 10.9715, 10.9695, 10.9693, 10.9688, 10.9685))
+
+  expect_equal(get_geometry("Berg") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4) |> suppressWarnings(),
+               c(11.4097, 11.4098, 11.4054, 11.4026, 11.4005, 11.399, 11.3989, 11.3994, 11.3989, 11.3993))
+})
+
 test_that("Fallbacks working as intended.", {
 
   expect_error(get_extent("Aix La Chapelle"))
