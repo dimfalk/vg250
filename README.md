@@ -33,9 +33,9 @@ library(vg250)
 #> 0.5.7
 ```
 
-## Basic examples
+## Getting started
 
-Just a few quick insights on the use of this package:
+Just to provide a few quick insights on the use of this package:
 
 ``` r
 # fetch data

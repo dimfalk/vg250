@@ -43,9 +43,9 @@ and load the package via
 library(vg250)
 ```
 
-## Basic examples
+## Getting started
 
-Just a few quick insights on the use of this package:
+Just to provide a few quick insights on the use of this package:
 
 ```{r example}
 # fetch data
