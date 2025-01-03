@@ -26,14 +26,18 @@ You can install the development version of vg250 with:
 devtools::install_github("dimfalk/vg250")
 ```
 
+and load the package via
+
+``` r
+library(vg250)
+#> 0.5.7
+```
+
 ## Basic examples
 
 Just a few quick insights on the use of this package:
 
 ``` r
-library(vg250)
-#> 0.5.7
-
 # fetch data
 name <- "Aachen"
 
