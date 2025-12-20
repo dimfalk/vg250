@@ -30,7 +30,7 @@ and load the package via
 
 ``` r
 library(vg250)
-#> 0.5.7
+#> 0.5.8
 ```
 
 ## Getting started
@@ -84,10 +84,10 @@ sf::st_filter(vg250, p)
 #> Dimension:     XY
 #> Bounding box:  xmin: 5.974861 ymin: 50.66279 xmax: 6.216912 ymax: 50.85735
 #> Geodetic CRS:  WGS 84
-#>      GEM                 KRS                 LAN    EWZ    KFL
-#> 1 Aachen Städteregion Aachen Nordrhein-Westfalen 252136 160.85
-#>                             geom
-#> 1 MULTIPOLYGON (((6.057066 50...
+#> # A tibble: 1 × 6
+#>   GEM    KRS                 LAN             EWZ   KFL                      geom
+#> * <chr>  <chr>               <chr>         <dbl> <dbl>        <MULTIPOLYGON [°]>
+#> 1 Aachen Städteregion Aachen Nordrhein-W… 252769  161. (((6.057066 50.85417, 6.…
 
 # join attributes spatially to p
 sf::st_intersection(vg250, p)
@@ -96,10 +96,10 @@ sf::st_intersection(vg250, p)
 #> Dimension:     XY
 #> Bounding box:  xmin: 6.109002 ymin: 50.76053 xmax: 6.109002 ymax: 50.76053
 #> Geodetic CRS:  WGS 84
-#>         GEM                 KRS                 LAN    EWZ    KFL
-#> 2145 Aachen Städteregion Aachen Nordrhein-Westfalen 252136 160.85
-#>                           geom
-#> 2145 POINT (6.109002 50.76053)
+#> # A tibble: 1 × 6
+#>   GEM    KRS                 LAN             EWZ   KFL                geom
+#> * <chr>  <chr>               <chr>         <dbl> <dbl>         <POINT [°]>
+#> 1 Aachen Städteregion Aachen Nordrhein-W… 252769  161. (6.109002 50.76053)
 
 # construct API queries
 sf::st_bbox(ext) |> as.numeric() |> round(4) |> paste0(collapse = ",") |> paste0("&bbox=", x = _)
@@ -110,32 +110,23 @@ Note: The VG250 dataset itself can be accessed via `vg250`:
 
 ``` r
 vg250
-#> Simple feature collection with 10990 features and 5 fields
+#> Simple feature collection with 10978 features and 5 fields
 #> Geometry type: GEOMETRY
 #> Dimension:     XY
 #> Bounding box:  xmin: 5.86625 ymin: 47.27012 xmax: 15.04182 ymax: 55.05878
 #> Geodetic CRS:  WGS 84
-#> First 10 features:
-#>                    GEM          KRS                LAN    EWZ    KFL
-#> 1            Flensburg    Flensburg Schleswig-Holstein  92550  56.73
-#> 2                 Kiel         Kiel Schleswig-Holstein 247717 118.65
-#> 3               Lübeck       Lübeck Schleswig-Holstein 218095 214.19
-#> 4           Neumünster   Neumünster Schleswig-Holstein  79502  71.66
-#> 5          Brunsbüttel Dithmarschen Schleswig-Holstein  12603  65.21
-#> 6                Heide Dithmarschen Schleswig-Holstein  22114  31.97
-#> 7              Averlak Dithmarschen Schleswig-Holstein    570   9.06
-#> 8             Brickeln Dithmarschen Schleswig-Holstein    198   6.07
-#> 9             Buchholz Dithmarschen Schleswig-Holstein   1001  14.56
-#> 10 Burg (Dithmarschen) Dithmarschen Schleswig-Holstein   4206  11.25
-#>                              geom
-#> 1  MULTIPOLYGON (((9.412137 54...
-#> 2  MULTIPOLYGON (((10.16852 54...
-#> 3  MULTIPOLYGON (((10.87526 53...
-#> 4  MULTIPOLYGON (((9.991971 54...
-#> 5  MULTIPOLYGON (((9.166074 53...
-#> 6  MULTIPOLYGON (((9.121658 54...
-#> 7  MULTIPOLYGON (((9.212443 53...
-#> 8  MULTIPOLYGON (((9.255627 54...
-#> 9  MULTIPOLYGON (((9.182763 53...
-#> 10 MULTIPOLYGON (((9.277097 54...
+#> # A tibble: 10,978 × 6
+#>    GEM                 KRS         LAN      EWZ    KFL                      geom
+#>  * <chr>               <chr>       <chr>  <dbl>  <dbl>        <MULTIPOLYGON [°]>
+#>  1 Flensburg           Flensburg   Schl…  92667  56.7  (((9.412137 54.82382, 9.…
+#>  2 Kiel                Kiel        Schl… 248873 119.   (((10.16852 54.43284, 10…
+#>  3 Lübeck              Lübeck      Schl… 219044 214.   (((10.87526 53.98833, 10…
+#>  4 Neumünster          Neumünster  Schl…  80185  71.7  (((9.991971 54.14988, 9.…
+#>  5 Brunsbüttel         Dithmarsch… Schl…  12651  65.2  (((9.166074 53.94532, 9.…
+#>  6 Heide               Dithmarsch… Schl…  22467  32.0  (((9.121658 54.20769, 9.…
+#>  7 Averlak             Dithmarsch… Schl…    587   9.06 (((9.212443 53.95312, 9.…
+#>  8 Brickeln            Dithmarsch… Schl…    191   6.07 (((9.255627 54.02135, 9.…
+#>  9 Buchholz            Dithmarsch… Schl…    995  14.6  (((9.182763 53.99953, 9.…
+#> 10 Burg (Dithmarschen) Dithmarsch… Schl…   4173  11.2  (((9.277097 54.01499, 9.…
+#> # ℹ 10,968 more rows
 ```
