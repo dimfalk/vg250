@@ -3,9 +3,9 @@
 \docType{data}
 \name{vg250}
 \alias{vg250}
-\title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2022)}
+\title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2023)}
 \format{
-Simple feature collection of type MULTIPOLYGON with 10,990 features and 6 fields:
+Simple feature collection of type MULTIPOLYGON with 10,978 features and 6 fields:
 \describe{
 \item{GEM}{character. Municipality name, 'GEM' level.}
 \item{KRS}{character. District name, 'KRS' level.}
@@ -29,10 +29,10 @@ vg250
 VG250 product provided by the Federal Agency for Cartography and Geodesy, Germany
 }
 \note{
-Last access: 2024-06-20
+Last access: 2025-12-20
 
 License: Data licence Germany – attribution – version 2.0
 
-Copyright: GeoBasis-DE / BKG 2024 (modified)
+Copyright: GeoBasis-DE / BKG 2025 (modified)
 }
 \keyword{datasets}

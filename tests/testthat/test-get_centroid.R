@@ -36,13 +36,13 @@ test_that("CRS argument working as intended.", {
                c(366536.3, 5618811.7))
 
   expect_equal(get_centroid("Freiburg im Breisgau", crs = "epsg:25832") |> sf::st_coordinates() |> as.numeric() |> round(1),
-               c(411822.3, 5316159.3))
+               c(411822.5, 5316159.4))
 })
 
 test_that("In case of non-unique GEM names, geometry with largest number of inhabitants is returned.", {
 
   expect_equal(get_centroid("Neuenkirchen") |> sf::st_coordinates() |> as.numeric() |> round(4) |> suppressWarnings(),
-               c(7.3762, 52.2358))
+               c(7.3763, 52.2359))
 
   expect_equal(get_centroid("Schönberg") |> sf::st_coordinates() |> as.numeric() |> round(4) |> suppressWarnings(),
                c(10.9222, 53.8508))
