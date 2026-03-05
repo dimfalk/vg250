@@ -3,7 +3,9 @@
 #' @param x character. Name of administrative area.
 #' @param level character. Relevant administrative level.
 #' @param crs character. Spatial Reference System Identifier.
-#' @param buffer numeric. Margin extension in meters. Without buffering per default.
+#' @param buffer numeric. Margin extension in meters.
+#'     The buffer is applied to the bounding box, not the original geometry.
+#'     Without buffering per default.
 #'
 #' @return Geometry set of class `sfc_POLYGON`.
 #' @export
@@ -54,7 +56,7 @@ get_extent <- function(x = NULL,
   if (buffer > 0) {
 
     # NOTE: temporarily fixes an s2 related issue in dimfalk/vg250#14, see also r-spatial/sf#1692
-    bbox <- sf::st_transform(bbox, "epsg:25832") |>
+    bbox <- sf::st_transform(bbox, "epsg:3034") |>
       sf::st_buffer(dist = buffer) |>
       sf::st_transform(crs)
   }

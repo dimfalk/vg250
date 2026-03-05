@@ -13,7 +13,9 @@ get_extent(x = NULL, level = "GEM", crs = "epsg:4326", buffer = 0)
 
 \item{crs}{character. Spatial Reference System Identifier.}
 
-\item{buffer}{numeric. Margin extension in meters. Without buffering per default.}
+\item{buffer}{numeric. Margin extension in meters.
+The buffer is applied to the bounding box, not the original geometry.
+Without buffering per default.}
 }
 \value{
 Geometry set of class \code{sfc_POLYGON}.

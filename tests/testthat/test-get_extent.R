@@ -42,24 +42,24 @@ test_that("CRS argument working as intended.", {
 test_that("BUFFER argument working as intended.", {
 
   expect_equal(get_extent("Aachen", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(5.9607, 5.9607, 5.9607, 5.9607, 5.9608, 5.961, 5.9611, 5.9614, 5.9616, 5.9619))
+               c(5.9602, 5.9602, 5.9602, 5.9602, 5.9603, 5.9605, 5.9607, 5.9609, 5.9611, 5.9614))
 
   expect_equal(get_extent("Bonn", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(7.0094, 7.0093, 7.0093, 7.0094, 7.0095, 7.0096, 7.0098, 7.0100, 7.0102, 7.0105))
+               c(7.0088, 7.0088, 7.0088, 7.0089, 7.009, 7.0091, 7.0093, 7.0095, 7.0098, 7.0101))
 
   expect_equal(get_extent("Freiburg im Breisgau", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
-               c(7.6491, 7.649, 7.6491, 7.6491, 7.6492, 7.6493, 7.6495, 7.6497, 7.6499, 7.6502))
+               c(7.6486, 7.6486, 7.6486, 7.6487, 7.6487, 7.6489, 7.649, 7.6493, 7.6495, 7.6498))
 
 
 
   expect_equal(get_extent("Aachen", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
-               c(285212.6, 286097.9, 286101.4, 286107.6, 286116.5, 286128.2, 286142.4, 286159.3, 286178.8, 286200.7))
+               c(285176.8, 286062.1, 286065.8, 286072.2, 286081.5, 286093.5, 286108.3, 286125.8, 286145.9, 286168.7))
 
   expect_equal(get_extent("Bonn", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
-               c(359220, 359643.3, 359646.1, 359651.6, 359659.8, 359670.7, 359684.2, 359700.4, 359719.2, 359740.5))
+               c(359184.6, 359607.9, 359610.8, 359616.4, 359624.9, 359636.2, 359650.3, 359667, 359686.4, 359708.5))
 
   expect_equal(get_extent("Freiburg im Breisgau", crs = "epsg:25832", buffer = 1000) |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(1),
-               c(399040.3, 399363.5, 399365.7, 399370.7, 399378.5, 399388.9, 399401.9, 399417.6, 399435.9, 399456.8))
+               c(399006.3, 399329.3, 399331.7, 399336.9, 399344.8, 399355.6, 399369.1, 399385.4, 399404.3, 399425.8))
 })
 
 test_that("In case of non-unique GEM names, geometry with largest number of inhabitants is returned.", {
