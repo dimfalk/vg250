@@ -6,13 +6,11 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{
 #' is_municipality("Aachen")
 #' is_municipality("Aix la Chapelle")
 #'
 #' is_municipality("Roth")
 #' is_municipality("Freiburg")
-#' }
 is_municipality <- function(x = NULL) {
 
   # check arguments ------------------------------------------------------------
