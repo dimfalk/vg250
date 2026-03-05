@@ -26,22 +26,22 @@ get_centroid <- function(x = NULL,
 
   checkmate::assert_choice(level, allowed_level)
 
-  if (level == "GEM") stopifnot("Name specified does not exist." = check_municipality(x))
+  if (level == "GEM") stopifnot("Name specified does not exist." = is_municipality(x))
 
   checkmate::assert_character(crs, len = 1, pattern = "epsg:[0-9]{4,6}")
 
   # ----------------------------------------------------------------------------
 
-  sf <- dplyr::filter(vg250, get(level) == x)
+  feat <- dplyr::filter(vg250, get(level) == x)
 
-  n <- dim(sf)[1]
+  n <- dim(feat)[1]
 
   if (level == "GEM" && n > 1) {
 
-    sf <- dplyr::filter(sf, EWZ == max(EWZ))
+    feat <- dplyr::filter(feat, EWZ == max(EWZ))
   }
 
-  p <- sf::st_union(sf) |>
+  p <- sf::st_union(feat) |>
     sf::st_centroid() |>
     sf::st_transform(crs)
 

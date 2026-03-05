@@ -26,7 +26,7 @@ information for a chosen administrative level for various applications.
 Since I found myself in the need of spatial information on a municipality level 
 (geometry, extent, centroids) for convenience reasons quite often, the decision 
 was made to centralize associated data and functions based on `{sf}` in a 
-separate package to simplify maintenance.
+separate package to simplify access and maintenance.
 
 ## Installation
 

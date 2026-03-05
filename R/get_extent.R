@@ -28,7 +28,7 @@ get_extent <- function(x = NULL,
 
   checkmate::assert_choice(level, allowed_level)
 
-  if (level == "GEM") stopifnot("Name specified does not exist." = check_municipality(x))
+  if (level == "GEM") stopifnot("Name specified does not exist." = is_municipality(x))
 
   checkmate::assert_character(crs, len = 1, pattern = "epsg:[0-9]{4,6}")
 
@@ -36,17 +36,17 @@ get_extent <- function(x = NULL,
 
   # ----------------------------------------------------------------------------
 
-  sf <- dplyr::filter(vg250, get(level) == x)
+  feat <- dplyr::filter(vg250, get(level) == x)
 
-  n <- dim(sf)[1]
+  n <- dim(feat)[1]
 
   # filter to presumably most relevant object, i.e. with the largest population
   if (level == "GEM" && n > 1) {
 
-    sf <- dplyr::filter(sf, EWZ == max(EWZ))
+    feat <- dplyr::filter(feat, EWZ == max(EWZ))
   }
 
-  bbox <- sf::st_bbox(sf) |>
+  bbox <- sf::st_bbox(feat) |>
     sf::st_as_sfc() |>
     sf::st_transform(crs)
 

@@ -1,6 +1,6 @@
 Package: vg250
 Title: R Interface for VG250 Dataset Subset
-Version: 0.5.10
+Version: 0.5.11
 Date: 2026-03-05
 Authors@R: 
     person("Dimitri", "Falk", role = c("aut", "cre"), email = "falk.dimitri@eglv.de")

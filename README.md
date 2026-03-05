@@ -15,7 +15,8 @@ information for a chosen administrative level for various applications.
 Since I found myself in the need of spatial information on a
 municipality level (geometry, extent, centroids) for convenience reasons
 quite often, the decision was made to centralize associated data and
-functions based on `{sf}` in a separate package to simplify maintenance.
+functions based on `{sf}` in a separate package to simplify access and
+maintenance.
 
 ## Installation
 
@@ -30,7 +31,7 @@ and load the package via
 
 ``` r
 library(vg250)
-#> 0.5.9
+#> 0.5.11
 ```
 
 ## Getting started
