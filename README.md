@@ -30,7 +30,7 @@ and load the package via
 
 ``` r
 library(vg250)
-#> 0.5.8
+#> 0.5.9
 ```
 
 ## Getting started
@@ -66,7 +66,7 @@ ggplot() +
   geom_sf(data = p, col = "blue")
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/README-example-1.png" alt="" width="100%" />
 
 This information can now be used to e.g. create masks to crop raster
 data, select vector features, perform spatial joins, construct API

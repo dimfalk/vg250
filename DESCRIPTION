@@ -5,7 +5,7 @@ Date: 2026-03-05
 Authors@R: 
     person("Dimitri", "Falk", role = c("aut", "cre"), email = "falk.dimitri@eglv.de")
 Description: Obtain feature geometries, bounding boxes and centroids of 
-    adminstrative areas of Germany on a municipality, district or state level.
+    administrative areas of Germany on a municipality, district or state level.
 License: AGPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
