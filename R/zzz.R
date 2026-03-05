@@ -4,3 +4,6 @@
 
   utils::packageVersion(pkg) |> packageStartupMessage()
 }
+
+#' @import sf
+NULL

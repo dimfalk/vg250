@@ -5,14 +5,12 @@
 #' @return logical.
 #' @noRd
 #'
-#' @import sf
-#'
 #' @examples
 #' \dontrun{
 #' check_municipality("Aachen")
-#' check_municipality("Roth")
-#'
 #' check_municipality("Aix la Chapelle")
+#'
+#' check_municipality("Roth")
 #' check_municipality("Freiburg")
 #' }
 check_municipality <- function(x = NULL) {
@@ -23,10 +21,8 @@ check_municipality <- function(x = NULL) {
 
   # main -----------------------------------------------------------------------
 
-  sf <- dplyr::filter(vg250, GEM == x)
-
   # number of objects present
-  n <- dim(sf)[1]
+  n <- sum(vg250[["GEM"]] == x, na.rm = TRUE)
 
   # no results, capture typos and non-existent names in the dataset
   if (n == 0) {
