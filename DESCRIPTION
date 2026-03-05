@@ -1,15 +1,15 @@
 Package: vg250
 Title: R Interface for VG250 Dataset Subset
-Version: 0.5.8
-Date: 2025-12-20
+Version: 0.5.9
+Date: 2026-03-05
 Authors@R: 
-    person("Dimitri", "Falk", , "falk.dimitri@eglv.de", role = c("aut", "cre"))
+    person("Dimitri", "Falk", role = c("aut", "cre"), email = "falk.dimitri@eglv.de")
 Description: Obtain feature geometries, bounding boxes and centroids of 
     adminstrative areas of Germany on a municipality, district or state level.
 License: AGPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends: R (>= 4.2.0)
 Imports: 
     checkmate,

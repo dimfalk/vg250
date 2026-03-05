@@ -1,4 +1,4 @@
-#' Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2023)
+#' Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2024)
 #'
 #' VG250 product provided by the Federal Agency for Cartography and Geodesy, Germany
 #'

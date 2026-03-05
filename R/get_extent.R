@@ -20,13 +20,6 @@ get_extent <- function(x = NULL,
                        crs = "epsg:4326",
                        buffer = 0) {
 
-  # debugging ------------------------------------------------------------------
-
-  # x <- "Aachen"
-  # level <- "GEM"
-  # crs <- "epsg:4326"
-  # buffer <- 1000
-
   # check arguments ------------------------------------------------------------
 
   checkmate::assert_character(x, len = 1)

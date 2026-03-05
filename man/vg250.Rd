@@ -3,7 +3,7 @@
 \docType{data}
 \name{vg250}
 \alias{vg250}
-\title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2023)}
+\title{Data: Polygon representation of administrative areas in Germany (VG250-EW 31.12.2024)}
 \format{
 Simple feature collection of type MULTIPOLYGON with 10,978 features and 6 fields:
 \describe{

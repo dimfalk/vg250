@@ -17,10 +17,6 @@
 #' }
 check_municipality <- function(x = NULL) {
 
-  # debugging ------------------------------------------------------------------
-
-  # x <- "Aachen"
-
   # check arguments ------------------------------------------------------------
 
   checkmate::assert_character(x, len = 1)

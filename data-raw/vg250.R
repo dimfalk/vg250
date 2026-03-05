@@ -15,6 +15,13 @@ unlink(fname)
 
 # read data --------------------------------------------------------------------
 
+# check version
+akt <- list.files(pattern = "aktualitaet.txt", full.names = TRUE, recursive = TRUE)
+
+readr::read_lines(akt[1], n_max = 1)
+
+
+
 gem <- list.files(pattern = "VG250_GEM.shp", full.names = TRUE, recursive = TRUE)
 krs <- list.files(pattern = "VG250_KRS.shp", full.names = TRUE, recursive = TRUE)
 lan <- list.files(pattern = "VG250_LAN.shp", full.names = TRUE, recursive = TRUE)
@@ -50,7 +57,7 @@ vg250 <- sf::st_as_sf(atab, geom) |>
 
 obj <- c("Bremen", "Hamburg")
 
-for (i in 1:length(obj)) {
+for (i in seq_along(obj)) {
 
   poly <- dplyr::filter(vg250, GEM == obj[i]) |> sf::st_cast("POLYGON")
 
