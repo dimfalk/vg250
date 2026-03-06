@@ -14,7 +14,7 @@ get_geometry(x = NULL, level = "GEM", crs = "epsg:4326")
 \item{crs}{character. Spatial Reference System Identifier.}
 }
 \value{
-Geometry set of class \code{sfc_MULTIPOLYGON}.
+Geometry set of class \code{sfc_POLYGON} or \code{sfc_MULTIPOLYGON}.
 }
 \description{
 Get original geometry information of the object queried from the dataset

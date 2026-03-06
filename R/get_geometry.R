@@ -4,7 +4,7 @@
 #' @param level character. Relevant administrative level.
 #' @param crs character. Spatial Reference System Identifier.
 #'
-#' @return Geometry set of class `sfc_MULTIPOLYGON`.
+#' @return Geometry set of class `sfc_POLYGON` or `sfc_MULTIPOLYGON`.
 #' @export
 #'
 #' @seealso [get_centroid()], [get_extent()]
@@ -34,9 +34,8 @@ get_geometry <- function(x = NULL,
 
   feat <- dplyr::filter(vg250, get(level) == x)
 
-  n <- dim(feat)[1]
-
-  if (level == "GEM" && n > 1) {
+  # filter to presumably most relevant object, i.e. with the largest population
+  if (level == "GEM" && nrow(feat) > 1) {
 
     feat <- dplyr::filter(feat, EWZ == max(EWZ))
   }

@@ -34,9 +34,8 @@ get_centroid <- function(x = NULL,
 
   feat <- dplyr::filter(vg250, get(level) == x)
 
-  n <- dim(feat)[1]
-
-  if (level == "GEM" && n > 1) {
+  # filter to presumably most relevant object, i.e. with the largest population
+  if (level == "GEM" && nrow(feat) > 1) {
 
     feat <- dplyr::filter(feat, EWZ == max(EWZ))
   }
