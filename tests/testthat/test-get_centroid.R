@@ -25,6 +25,17 @@ test_that("LEVEL argument working as intended.", {
 
   expect_equal(get_centroid("Breisgau-Hochschwarzwald", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> round(4),
                c(7.9251, 47.9250))
+
+
+
+  expect_equal(get_centroid("Berlin", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> round(4),
+               c(13.402, 52.5015))
+
+  expect_equal(get_centroid("Bremen", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> round(4),
+               c(8.7477, 53.1921))
+
+  expect_equal(get_centroid("Hamburg", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> round(4),
+               c(10.027, 53.5446))
 })
 
 test_that("CRS argument working as intended.", {

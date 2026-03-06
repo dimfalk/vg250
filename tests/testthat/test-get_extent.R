@@ -25,6 +25,17 @@ test_that("LEVEL argument working as intended.", {
 
   expect_equal(get_extent("Breisgau-Hochschwarzwald", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
                c(7.5297, 8.4397, 8.4397, 7.5297, 7.5297, 47.7436, 47.7436, 48.1168, 48.1168, 47.7436))
+
+
+
+  expect_equal(get_extent("Berlin", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(13.0883, 13.7605, 13.7605, 13.0883, 13.0883, 52.3382, 52.3382, 52.6754, 52.6754, 52.3382))
+
+  expect_equal(get_extent("Bremen", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(8.4817, 8.9909, 8.9909, 8.4817, 8.4817, 53.011, 53.011, 53.6101, 53.6101, 53.011))
+
+  expect_equal(get_extent("Hamburg", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(9.7344, 10.326, 10.326, 9.7344, 9.7344, 53.3951, 53.3951, 53.7385, 53.7385, 53.3951))
 })
 
 test_that("CRS argument working as intended.", {

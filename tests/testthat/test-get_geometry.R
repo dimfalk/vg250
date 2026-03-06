@@ -25,6 +25,17 @@ test_that("LEVEL argument working as intended.", {
 
   expect_equal(get_geometry("Breisgau-Hochschwarzwald", level = "KRS") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
                c(7.9834, 7.9843, 7.9916, 7.9963, 7.9996, 8.0039, 8.0057, 8.0076, 8.0098, 8.0126))
+
+
+
+  expect_equal(get_geometry("Berlin", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(13.4794, 13.4771, 13.4754, 13.4718, 13.466, 13.4595, 13.4524, 13.4508, 13.4551, 13.4579))
+
+  expect_equal(get_geometry("Bremen", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(8.497, 8.4921, 8.4915, 8.4898, 8.4897, 8.4853, 8.4817, 8.4826, 8.4844, 8.4868))
+
+  expect_equal(get_geometry("Hamburg", level = "LAN") |> sf::st_coordinates() |> as.numeric() |> head(10) |> round(4),
+               c(10.1852, 10.1798, 10.178, 10.1714, 10.1682, 10.166, 10.1629, 10.1615, 10.1615, 10.1565))
 })
 
 test_that("CRS argument working as intended.", {
@@ -53,9 +64,9 @@ test_that("In case of non-unique GEM names, geometry with largest number of inha
 
 test_that("Fallbacks working as intended.", {
 
-  expect_error(get_extent("Aix La Chapelle"))
+  expect_error(get_geometry("Aix La Chapelle"))
 
-  expect_error(get_extent("Freiburg") |> suppressWarnings())
+  expect_error(get_geometry("Freiburg") |> suppressWarnings())
 
-  expect_warning(get_extent("Roth"))
+  expect_warning(get_geometry("Roth"))
 })
