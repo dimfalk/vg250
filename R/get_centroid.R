@@ -26,7 +26,7 @@ get_centroid <- function(x = NULL,
 
   checkmate::assert_choice(level, allowed_level)
 
-  if (level == "GEM") stopifnot("Name specified does not exist." = is_municipality(x))
+  stopifnot("Name specified does not exist." = is_present(x, level))
 
   checkmate::assert_character(crs, len = 1, pattern = "epsg:[0-9]{4,6}")
 

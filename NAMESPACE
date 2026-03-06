@@ -3,5 +3,5 @@
 export(get_centroid)
 export(get_extent)
 export(get_geometry)
-export(is_municipality)
+export(is_present)
 import(sf)
