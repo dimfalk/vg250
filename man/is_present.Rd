@@ -7,7 +7,7 @@
 is_present(x = NULL, level = "GEM")
 }
 \arguments{
-\item{x}{character. Municipality name.}
+\item{x}{character. Name of administrative area.}
 
 \item{level}{character. Relevant administrative level.}
 }

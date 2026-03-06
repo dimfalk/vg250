@@ -1,6 +1,6 @@
 #' Check whether given name of the administrative area is present in the dataset at the chosen level
 #'
-#' @param x character. Municipality name.
+#' @param x character. Name of administrative area.
 #' @param level character. Relevant administrative level.
 #'
 #' @return logical.
