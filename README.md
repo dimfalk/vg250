@@ -31,7 +31,7 @@ and load the package via
 
 ``` r
 library(vg250)
-#> 0.5.18
+#> 0.5.19
 ```
 
 ## Getting started

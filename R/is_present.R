@@ -60,7 +60,7 @@ is_present <- function(x = NULL,
     if (length(partial) > 0) {
 
       paste0("Your input did not return any objects. Are you looking for one of these ", label, "?") |>
-        paste(x = _, stringr::str_c(partial, collapse = ", "), sep ="\n  ") |> warning()
+        paste(x = _, stringr::str_c(partial, collapse = ", "), sep ="\n  ") |> warning(call. = FALSE)
     }
 
     FALSE
@@ -74,7 +74,7 @@ is_present <- function(x = NULL,
   } else if (n > 1) {
 
     paste("Your input returned multiple objects. Only the object with the largest number of inhabitants is processed.",
-          "Consider to visually inspect the returned object using e.g. `mapview::mapview()`.", sep ="\n  ") |> warning()
+          "Consider to visually inspect the returned object using e.g. `mapview::mapview()`.", sep ="\n  ") |> warning(call. = FALSE)
 
     TRUE
   }
