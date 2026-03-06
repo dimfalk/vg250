@@ -17,15 +17,13 @@ Simple feature collection of type MULTIPOLYGON with 10,978 features and 6 fields
 }
 }
 \source{
+Data from the Federal Agency for Cartography and Geodesy (BKG):
 \url{https://daten.gdz.bkg.bund.de/produkte/vg/vg250-ew_ebenen_1231/aktuell/vg250-ew_12-31.utm32s.shape.ebenen.zip}
 }
 \usage{
 vg250
 }
 \description{
-\url{https://gdz.bkg.bund.de/index.php/default/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html}
-}
-\details{
 VG250 product provided by the Federal Agency for Cartography and Geodesy, Germany
 }
 \note{
@@ -34,5 +32,8 @@ Last access: 2025-12-20
 License: Data licence Germany – attribution – version 2.0
 
 Copyright: GeoBasis-DE / BKG 2025 (modified)
+}
+\references{
+Product page: \url{https://gdz.bkg.bund.de/index.php/default/verwaltungsgebiete-1-250-000-mit-einwohnerzahlen-stand-31-12-vg250-ew-31-12.html}
 }
 \keyword{datasets}
